@@ -32,10 +32,39 @@ Normalizing the data
 Splitting the data into test and train
 
 ## PROGRAM:
-/Write your code here/
+```
+import pandas as pd
+df=pd.read_csv("Churn_Modelling.csv")
+df.head()
+df.isnull().sum()
+df.drop(["RowNumber","Age","Gender","Geography","Surname"],inplace=True,axis=1)
+print(df)
+x=df.iloc[:,:-1].values
+y=df.iloc[:,-1].values
+print(x)
+print(y)
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+df1 = pd.DataFrame(scaler.fit_transform(df))
+print(df1)
+from sklearn.model_selection import train_test_split
+xtrain,ytrain,xtest,ytest=train_test_split(x,y,test_size=0.2,random_state=2)
+print(xtrain)
+print(len(xtrain))
+print(xtest)
+print(len(xtest))
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+df1 = sc.fit_transform(df)
+print(df1)
+```
 
 ## OUTPUT:
-/ Show the result/
+
+![229413992-924655c0-db37-426c-991e-b46b325cec55](https://user-images.githubusercontent.com/95043391/229421739-fe7ffb59-fd84-4ab0-b0ae-47b8157f720e.png)
+![229414007-c93d4d10-a839-4090-a577-bc05375fcf61](https://user-images.githubusercontent.com/95043391/229421755-6107101a-aedd-4731-b51f-42a2cde3679f.png)
+![229414022-f315fc60-2b6f-4cd1-aa33-a681ca2fec95](https://user-images.githubusercontent.com/95043391/229421771-f524af28-1b0e-4d3e-8191-685dd58dbf21.png)
+![229414040-bffbb5ee-29bd-4a14-80dd-45a4a9ce2aaa](https://user-images.githubusercontent.com/95043391/229421785-697f1465-7f8b-45ea-b912-0142fc5327b0.png)
 
 ## RESULT
-/Type your result here/
+Thus the above program for standardizing the given data was implemented successfully.
