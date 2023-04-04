@@ -31,10 +31,6 @@ Encoding categorical data
 Normalizing the data
 Splitting the data into test and train
 
-```
-NAME:M.GUNASEKHAR
-REF NO:212221240014
-```
 
 ## PROGRAM:
 ```
