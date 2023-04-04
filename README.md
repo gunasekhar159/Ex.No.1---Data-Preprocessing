@@ -31,10 +31,10 @@ Encoding categorical data
 Normalizing the data
 Splitting the data into test and train
 
-## PROGRAM:
-```
 NAME:M.GUNASEKHAR
 REF NO:212221240014
+
+## PROGRAM:
 ```
 import pandas as pd
 df=pd.read_csv("Churn_Modelling.csv")
